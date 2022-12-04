@@ -1,0 +1,48 @@
+<html>
+<head>
+<title>Notas</title>
+<style>
+table#tabela {
+font-family: Arial;
+font-size: 20px;
+border: 1px solid black;
+border-collapse: collapse;
+}
+table#tabela td{
+text-align: center;
+border: 1px solid black;
+}
+</style>
+</head>
+<body>
+<script>
+  var i, mg = 0, notas, ap = 0, pa = 0, ppa, am = 0;
+	notas = new Array(40);
+	ppa = new Array(40);
+	
+  for (i = 0; i < 40; i++) {
+	notas[i] = window.prompt("Digite a média final do " + (i+1) + "° aluno");
+	mg += (notas[i] / 40);
+	if (notas[i] >= 6){
+	ap++;
+if (notas[i] > 6){
+	am++;}} else {
+	ppa[i] =  6 - notas[i];
+       }}
+	pa = ap * 2.5;
+	document.write("<table id='tabela'><tr><td colspan='3' style='padding-right: 45px; padding-left: 45px'>Média global da turma:</td><td>" + mg + "</td></tr>");
+	document.write("<tr><td colspan='3' style='padding-right: 45px; padding-left: 45px'>Quantidade de alunos acima da média:</td><td>" + am + "</td></tr>");
+	document.write("<tr><td colspan='3' style='padding-right: 45px; padding-left: 45px'>Percentual de aprovados (média >= 6,0):</td><td>" + pa + "%</td></tr>");
+	document.write("<tr><td height='25px' colspan='2'></td></tr>");
+	document.write("<tr><td style='padding-right: 10px; padding-left: 10px'>N° do Aluno</td><td style='padding-right: 10px; padding-left: 10px'>Média Final</td><td style='padding-right: 10px; padding-left: 10px'>Indicativo visual</td><td style='padding-right: 10px; padding-left: 10px'>Pontos para atingir a aprovação</td></tr>");
+	for (i = 0; i < 40; i++) {
+	document.write("<tr><td>" + (i+1) + "</td><td>" + notas[i] + "</td>");
+	if (notas[i] >= 6) {
+	document.write("<td><img src='POSITIVO.PNG' width='75px' height='75px'>" +"</td><td>---</td></tr>");
+	} else {
+	document.write("<td><img src='NEGATIVO.PNG' width='75px' height='75px'>" + "</td><td>" + ppa[i] + "</td></tr>");
+	}}
+	document.write("</table>");
+</script>
+</body>
+</html>
